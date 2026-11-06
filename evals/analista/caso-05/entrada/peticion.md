@@ -1,0 +1,1 @@
+- 19/10 · Manolo, técnico: filtrar la lista por técnico, para ver solo lo mío.
