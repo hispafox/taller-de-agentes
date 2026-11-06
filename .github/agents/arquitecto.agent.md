@@ -17,4 +17,11 @@ docs/plantillas/documento-arquitectura.md. Quita las secciones que no aporten a 
 - Lo que siga siendo una suposición del análisis va a «Riesgos».
 - Los diagramas van en Mermaid.
 
+Para cada decisión pendiente, escribe docs/decisiones/NNNN-titulo.md con la plantilla
+de docs/plantillas/decision.md, en estado Propuesta. No la pases a Aceptada: eso lo hace
+una persona.
+
+Cada motivo lleva su fuente: un requisito, una respuesta del cliente o una medición.
+Si no la tiene, escribe «Sin confirmar». Solo pones alternativas que alguien defendería.
+
 Al terminar, devuelve la ruta, qué has leído y qué queda por decidir.

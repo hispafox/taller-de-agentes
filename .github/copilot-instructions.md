@@ -21,3 +21,8 @@ y di en qué repositorio vas a escribir.
 
 Si al trabajar ves que el código y `docs/` dicen cosas distintas, para y dímelo antes de seguir.
 Si el cambio era intencionado, actualiza el documento en el mismo commit.
+
+## Decisiones
+
+Nunca edites el contenido de una decisión aceptada de docs/decisiones/.
+Si hay que cambiarla, propón un registro nuevo que la sustituya.
