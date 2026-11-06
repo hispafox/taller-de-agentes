@@ -12,6 +12,11 @@ public static class Errores
         detail: $"No hay ninguna zona con el identificador {zonaId}.",
         statusCode: StatusCodes.Status400BadRequest);
 
+    public static IResult TecnicoNoExiste(int tecnicoId) => Results.Problem(
+        title: "El técnico no existe",
+        detail: $"No hay ningún técnico con el identificador {tecnicoId}.",
+        statusCode: StatusCodes.Status400BadRequest);
+
     public static IResult TituloObligatorio() => Results.Problem(
         title: "Falta el título",
         detail: "Una incidencia necesita un título.",

@@ -2,6 +2,7 @@
 name: Desarrollador
 description: Implementa un cambio con el proceso que pide y lo cierra con evidencia. Úsalo con una petición pequeña, o con un plan o un documento aprobados.
 tools: ['agent', 'read', 'search', 'edit', 'execute']
+skills: ['generar-pruebas']
 ---
 Si te piden explicar o mirar, no cambies nada.
 

@@ -13,6 +13,7 @@ public static class IncidenciasRutas
         incidencias.MapGet("/{id:int}", Leer);
         incidencias.MapPost("/", Abrir);
         incidencias.MapPut("/{id:int}", Editar);
+        incidencias.MapPut("/{id:int}/asignacion", AsignacionRutas.Asignar);
         incidencias.MapPost("/{id:int}/resolver", Resolver);
         incidencias.MapPost("/{id:int}/cerrar", Cerrar);
         incidencias.MapPost("/{id:int}/reabrir", Reabrir);
@@ -99,7 +100,7 @@ public static class IncidenciasRutas
     }
 
     private static Task<Incidencia?> Buscar(Datos datos, int id) =>
-        datos.Incidencias.Include(i => i.Zona).FirstOrDefaultAsync(i => i.Id == id);
+        datos.Incidencias.Include(i => i.Zona).Include(i => i.Tecnico).FirstOrDefaultAsync(i => i.Id == id);
 
     private static async Task<IResult?> Validar(DatosDeIncidencia cuerpo, Datos datos)
     {

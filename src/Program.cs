@@ -11,7 +11,11 @@ builder.Services.Configure<RouteHandlerOptions>(opciones => opciones.ThrowOnBadR
 builder.Services.AddDbContext<Datos>((servicios, opciones) =>
     opciones.UseSqlite(servicios.GetRequiredService<IConfiguration>().GetConnectionString("Incidencias")));
 builder.Services.ConfigureHttpJsonOptions(opciones =>
-    opciones.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+{
+    opciones.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    opciones.SerializerOptions.RespectRequiredConstructorParameters = true;
+    opciones.SerializerOptions.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow;
+});
 
 var app = builder.Build();
 

@@ -20,11 +20,14 @@ public record IncidenciaDetalle(
     DateTime FechaApertura,
     DateTime? FechaResolucion,
     DateTime? FechaCierre,
-    bool Archivada)
+    bool Archivada,
+    TecnicoResumen? Tecnico,
+    DateOnly? Plazo)
 {
     public static IncidenciaDetalle Desde(Incidencia i) => new(
         i.Id, i.Titulo, i.Descripcion, i.Observaciones, i.Prioridad, i.Estado,
-        i.ZonaId, i.Zona?.Nombre, i.FechaApertura, i.FechaResolucion, i.FechaCierre, i.Archivada);
+        i.ZonaId, i.Zona?.Nombre, i.FechaApertura, i.FechaResolucion, i.FechaCierre, i.Archivada,
+        i.Tecnico is null ? null : new TecnicoResumen(i.Tecnico.Id, i.Tecnico.Nombre), i.Plazo);
 }
 
 public record DatosDeIncidencia(

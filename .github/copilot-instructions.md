@@ -31,3 +31,10 @@ Si hay que cambiarla, propón un registro nuevo que la sustituya.
 
 Si lo que te piden cambia lo que dice una especificación de docs/, no toques el código.
 Dímelo y propón primero el cambio en la especificación.
+
+## Pruebas
+
+Cada cambio lleva sus pruebas en el mismo commit.
+Lo esperado sale de la especificación o de la petición, y nunca del código.
+No borres ni debilites una comprobación para que pase. Si te parece mal, dímelo.
+Pasa las pruebas relacionadas y di cuáles han fallado y cuáles no has podido pasar.
