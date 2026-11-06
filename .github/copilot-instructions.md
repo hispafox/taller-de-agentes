@@ -11,3 +11,8 @@ Las pruebas se pasan con `dotnet test` y `npm test --prefix src/interfaz`.
 La arquitectura, las decisiones y el vocabulario están en docs/.
 Antes de proponer un cambio, lee lo que afecte a ese cambio.
 Si lo que te piden contradice una decisión de docs/, dímelo antes de seguir.
+
+## GitHub
+
+Antes de crear o cambiar algo en GitHub, ejecuta `git remote -v`
+y di en qué repositorio vas a escribir.
