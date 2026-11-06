@@ -2,9 +2,11 @@ import { useEffect, useState, type FormEvent } from 'react';
 import {
   buscarIncidencias,
   listarIncidencias,
+  listarTecnicos,
   listarZonas,
   type Filtros,
   type IncidenciaEnLista,
+  type Tecnico,
   type Zona,
 } from '../api';
 import TablaIncidencias from '../componentes/TablaIncidencias';
@@ -12,11 +14,13 @@ import TablaIncidencias from '../componentes/TablaIncidencias';
 export default function Lista() {
   const [incidencias, setIncidencias] = useState<IncidenciaEnLista[]>([]);
   const [zonas, setZonas] = useState<Zona[]>([]);
+  const [tecnicos, setTecnicos] = useState<Tecnico[]>([]);
   const [filtros, setFiltros] = useState<Filtros>({});
   const [texto, setTexto] = useState('');
 
   useEffect(() => {
     listarZonas().then(setZonas);
+    listarTecnicos().then(setTecnicos);
   }, []);
 
   useEffect(() => {
@@ -61,6 +65,17 @@ export default function Lista() {
             {zonas.map((zona) => (
               <option key={zona.id} value={zona.id}>
                 {zona.nombre}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Técnico
+          <select onChange={(e) => setFiltros({ ...filtros, tecnicoId: e.target.value })}>
+            <option value="">Todos</option>
+            {tecnicos.map((tecnico) => (
+              <option key={tecnico.id} value={tecnico.id}>
+                {tecnico.nombre}
               </option>
             ))}
           </select>

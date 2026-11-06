@@ -8,9 +8,13 @@ export interface IncidenciaEnLista {
   estado: Estado;
   zona: string | null;
   fechaApertura: string;
+  tecnico: string | null;
+  plazo: string | null;
+  fueraDePlazo: boolean;
 }
 
-export interface Incidencia extends IncidenciaEnLista {
+export interface Incidencia extends Omit<IncidenciaEnLista, 'tecnico' | 'fueraDePlazo'> {
+  tecnico: Tecnico | null;
   descripcion: string | null;
   observaciones: string | null;
   zonaId: number | null;
@@ -27,6 +31,11 @@ export interface DatosDeIncidencia {
   zonaId: number | null;
 }
 
+export interface Tecnico {
+  id: number;
+  nombre: string;
+}
+
 export interface Zona {
   id: number;
   nombre: string;
@@ -36,6 +45,7 @@ export interface Filtros {
   estado?: string;
   prioridad?: string;
   zonaId?: string;
+  tecnicoId?: string;
 }
 
 async function pedir<T>(ruta: string, opciones?: RequestInit): Promise<T> {
@@ -80,6 +90,14 @@ export function editarIncidencia(id: string, datos: DatosDeIncidencia) {
 
 export function cambiarEstado(id: string, accion: 'resolver' | 'cerrar' | 'reabrir' | 'archivar') {
   return pedir<Incidencia>(`/incidencias/${id}/${accion}`, { method: 'POST' });
+}
+
+export function asignarIncidencia(id: string, tecnicoId: number | null, plazo: string | null) {
+  return pedir<unknown>(`/incidencias/${id}/asignacion`, conCuerpo('PUT', { tecnicoId, plazo }));
+}
+
+export function listarTecnicos() {
+  return pedir<Tecnico[]>('/tecnicos');
 }
 
 export function listarZonas() {

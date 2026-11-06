@@ -29,6 +29,8 @@ public class Incidencia
     public int? TecnicoId { get; set; }
     public Tecnico? Tecnico { get; set; }
     public DateOnly? Plazo { get; set; }
+
+    public bool FueraDePlazo(DateOnly hoy) => Plazo < hoy && Estado != EstadoIncidencia.Cerrada;
     public int? ZonaId { get; set; }
     public Zona? Zona { get; set; }
 }

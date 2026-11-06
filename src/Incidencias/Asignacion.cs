@@ -34,6 +34,6 @@ public static class AsignacionRutas
 
         var hoy = DateOnly.FromDateTime(reloj.GetUtcNow().UtcDateTime);
         var resumen = tecnico is null ? null : new TecnicoResumen(tecnico.Id, tecnico.Nombre);
-        return Results.Ok(new IncidenciaAsignada(id, resumen, incidencia.Plazo, incidencia.Plazo < hoy));
+        return Results.Ok(new IncidenciaAsignada(id, resumen, incidencia.Plazo, incidencia.FueraDePlazo(hoy)));
     }
 }

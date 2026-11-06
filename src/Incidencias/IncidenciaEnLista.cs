@@ -6,7 +6,10 @@ public record IncidenciaEnLista(
     PrioridadIncidencia Prioridad,
     EstadoIncidencia Estado,
     string? Zona,
-    DateTime FechaApertura);
+    DateTime FechaApertura,
+    string? Tecnico,
+    DateOnly? Plazo,
+    bool FueraDePlazo);
 
 public record IncidenciaDetalle(
     int Id,

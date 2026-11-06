@@ -1,0 +1,7 @@
+{
+  "name": "taller-de-agentes",
+  "private": true,
+  "scripts": {
+    "e2e": "playwright test"
+  }
+}

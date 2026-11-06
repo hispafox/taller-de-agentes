@@ -3,6 +3,15 @@ import type { IncidenciaEnLista } from '../api';
 
 const fecha = new Intl.DateTimeFormat('es-ES', { dateStyle: 'short' });
 
+function Plazo({ incidencia }: { incidencia: IncidenciaEnLista }) {
+  if (!incidencia.plazo) {
+    return null;
+  }
+
+  const dia = fecha.format(new Date(`${incidencia.plazo}T00:00:00`));
+  return incidencia.fueraDePlazo ? <span className="aviso-rojo">{dia} · Fuera de plazo</span> : <>{dia}</>;
+}
+
 export default function TablaIncidencias({ incidencias }: { incidencias: IncidenciaEnLista[] }) {
   if (incidencias.length === 0) {
     return <p>No hay incidencias.</p>;
@@ -16,6 +25,8 @@ export default function TablaIncidencias({ incidencias }: { incidencias: Inciden
           <th scope="col">Prioridad</th>
           <th scope="col">Estado</th>
           <th scope="col">Zona</th>
+          <th scope="col">Técnico</th>
+          <th scope="col">Plazo</th>
           <th scope="col">Apertura</th>
         </tr>
       </thead>
@@ -30,6 +41,10 @@ export default function TablaIncidencias({ incidencias }: { incidencias: Inciden
             </td>
             <td>{incidencia.estado}</td>
             <td>{incidencia.zona ?? 'Sin zona'}</td>
+            <td>{incidencia.tecnico ?? 'Sin asignar'}</td>
+            <td>
+              <Plazo incidencia={incidencia} />
+            </td>
             <td>{fecha.format(new Date(incidencia.fechaApertura))}</td>
           </tr>
         ))}

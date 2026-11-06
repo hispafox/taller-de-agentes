@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { cambiarEstado, editarIncidencia, leerIncidencia, type DatosDeIncidencia, type Incidencia } from '../api';
+import { asignarIncidencia, cambiarEstado, editarIncidencia, leerIncidencia, type DatosDeIncidencia, type Incidencia } from '../api';
+import FormularioAsignacion from '../componentes/FormularioAsignacion';
 import FormularioIncidencia from '../componentes/FormularioIncidencia';
 
 export default function Ficha() {
@@ -17,6 +18,11 @@ export default function Ficha() {
   function guardar(datos: DatosDeIncidencia) {
     setError(null);
     editarIncidencia(id, datos).then(setIncidencia).catch((e: Error) => setError(e.message));
+  }
+
+  function asignar(tecnicoId: number | null, plazo: string | null) {
+    setError(null);
+    asignarIncidencia(id, tecnicoId, plazo).then(cargar).catch((e: Error) => setError(e.message));
   }
 
   function accion(nombre: 'resolver' | 'cerrar' | 'reabrir' | 'archivar') {
@@ -51,6 +57,7 @@ export default function Ficha() {
         textoBoton="Guardar cambios"
         alGuardar={guardar}
       />
+      {!cerrada && <FormularioAsignacion key={incidencia.id} incidencia={incidencia} alGuardar={asignar} />}
       <div className="acciones">
         {incidencia.estado === 'Abierta' && <button onClick={() => accion('resolver')}>Resolver</button>}
         {incidencia.estado === 'Resuelta' && <button onClick={() => accion('cerrar')}>Cerrar</button>}

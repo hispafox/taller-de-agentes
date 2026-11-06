@@ -12,10 +12,14 @@ const fuga: IncidenciaEnLista = {
   estado: 'Abierta',
   zona: 'Norte',
   fechaApertura: '2026-11-02T10:00:00Z',
+  tecnico: null,
+  plazo: null,
+  fueraDePlazo: false,
 };
 
 const fichaDe = (estado: Incidencia['estado']): Incidencia => ({
   ...fuga,
+  tecnico: null,
   estado,
   descripcion: null,
   observaciones: null,
@@ -60,6 +64,39 @@ describe('la lista de incidencias', () => {
 
     await screen.findByRole('row', { name: /Fuga en el garaje/ });
     expect(screen.queryByRole('row', { name: /Caldera/ })).not.toBeInTheDocument();
+  });
+
+  it('C-01 · lo que no tiene técnico sale como «Sin asignar»', async () => {
+    responder({ 'GET /api/incidencias': [fuga], 'GET /api/zonas': [], 'GET /api/tecnicos': [] });
+    abrir('/incidencias');
+
+    const fila = await screen.findByRole('row', { name: /Fuga en el garaje/ });
+    expect(within(fila).getByText('Sin asignar')).toBeInTheDocument();
+  });
+
+  it('C-07 · lo que está fuera de plazo lleva el texto y el rojo', async () => {
+    responder({
+      'GET /api/incidencias': [{ ...fuga, tecnico: 'Rafa', plazo: '2026-11-05', fueraDePlazo: true }],
+      'GET /api/zonas': [],
+      'GET /api/tecnicos': [],
+    });
+    abrir('/incidencias');
+
+    expect(await screen.findByText(/Fuera de plazo/)).toHaveClass('aviso-rojo');
+  });
+
+  it('C-09 · pide a la API las del técnico elegido', async () => {
+    const simulado = responder({
+      'GET /api/incidencias': [fuga],
+      'GET /api/zonas': [],
+      'GET /api/tecnicos': [{ id: 1, nombre: 'Rafa' }],
+    });
+    abrir('/incidencias');
+
+    await screen.findByRole('option', { name: 'Rafa' });
+    await userEvent.selectOptions(screen.getByLabelText('Técnico'), 'Rafa');
+
+    expect(simulado).toHaveBeenCalledWith('/api/incidencias?tecnicoId=1', undefined);
   });
 
   it('pide a la API el filtro elegido', async () => {

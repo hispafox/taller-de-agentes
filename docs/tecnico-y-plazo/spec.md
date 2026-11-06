@@ -44,6 +44,9 @@ se ha pasado de plazo.
 | C-09 | Incidencias de varios técnicos | Se filtra por uno | Salen solo las suyas | RF-05 |
 | C-10 | Una incidencia cerrada | Se intenta asignar un técnico | Da error y la incidencia no cambia. Primero se reabre | RF-01 |
 | C-11 | Una incidencia abierta | Se le pone un plazo que ya ha pasado | Se guarda, y sale fuera de plazo desde el primer momento | RF-02 |
+| C-12 | Una incidencia resuelta y sin cerrar, con plazo de ayer | Se mira la lista | Sale fuera de plazo | RF-04 |
+
+<!-- C-12 sale de PE-03. La respuesta de Elena se escribe en el laboratorio: esta es la que usa el repositorio. -->
 
 ## Preguntas abiertas
 

@@ -6,11 +6,13 @@ public static class ListaDeIncidencias
 {
     public static async Task<List<IncidenciaEnLista>> Consultar(
         Datos datos,
+        TimeProvider reloj,
         EstadoIncidencia? estado,
         PrioridadIncidencia? prioridad,
-        int? zonaId)
+        int? zonaId,
+        int? tecnicoId)
     {
-        var incidencias = datos.Incidencias.Where(i => !i.Archivada);
+        var incidencias = datos.Incidencias.Include(i => i.Zona).Where(i => !i.Archivada);
 
         if (estado is not null)
             incidencias = incidencias.Where(i => i.Estado == estado);
@@ -18,10 +20,19 @@ public static class ListaDeIncidencias
             incidencias = incidencias.Where(i => i.Prioridad == prioridad);
         if (zonaId is not null)
             incidencias = incidencias.Where(i => i.ZonaId == zonaId);
+        if (tecnicoId is not null)
+            incidencias = incidencias.Where(i => i.TecnicoId == tecnicoId);
 
-        return await incidencias
-            .OrderByDescending(i => i.FechaApertura)
-            .Select(i => new IncidenciaEnLista(i.Id, i.Titulo, i.Prioridad, i.Estado, i.Zona!.Nombre, i.FechaApertura))
-            .ToListAsync();
+        var hoy = DateOnly.FromDateTime(reloj.GetUtcNow().UtcDateTime);
+        var lista = new List<IncidenciaEnLista>();
+        foreach (var incidencia in await incidencias.OrderByDescending(i => i.FechaApertura).ToListAsync())
+        {
+            var tecnico = await datos.Tecnicos.FirstOrDefaultAsync(t => t.Id == incidencia.TecnicoId);
+            lista.Add(new IncidenciaEnLista(
+                incidencia.Id, incidencia.Titulo, incidencia.Prioridad, incidencia.Estado, incidencia.Zona?.Nombre,
+                incidencia.FechaApertura, tecnico?.Nombre, incidencia.Plazo, incidencia.FueraDePlazo(hoy)));
+        }
+
+        return lista;
     }
 }

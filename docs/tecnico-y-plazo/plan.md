@@ -29,7 +29,7 @@ src/Incidencias/ y las migraciones existentes.
 
 ### T-04 · La lista de incidencias en la API
 - Toca: src/Incidencias/.
-- Casos: C-07, C-08 y C-09. En espera de PE-03.
+- Casos: C-07, C-08, C-09 y C-12.
 - Se comprueba: las pruebas de cada caso, con fechas fijas.
 
 ### T-05 · La pantalla
@@ -52,3 +52,6 @@ src/Incidencias/ y las migraciones existentes.
 - R-03 · T-04 en espera de PE-03.
 
 - R-04 · T-03 cerrada: dotnet test en verde. Cubre C-02, C-03, C-04, C-05, C-10 y C-11.
+
+- R-05 · PE-03 contestada: pasa a C-12.
+- R-06 · T-04 y T-05 cerradas, seguidas: dotnet test y npm test en verde. Sin comprobar: las pruebas de Playwright, que piden la aplicación en marcha.
