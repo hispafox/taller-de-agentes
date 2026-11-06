@@ -19,3 +19,4 @@ description: Escribe las pruebas de una tarea a partir de sus casos, con las con
 - Una prueba que solo comprueba que no ha dado error.
 - Un simulador que sustituye justo lo que se quería probar.
 - Cambiar lo esperado para que pase.
+- Si el caso dice que algo no cambia, vuelve a leerlo después de la petición.
