@@ -26,3 +26,8 @@ Si el cambio era intencionado, actualiza el documento en el mismo commit.
 
 Nunca edites el contenido de una decisión aceptada de docs/decisiones/.
 Si hay que cambiarla, propón un registro nuevo que la sustituya.
+
+## Especificaciones
+
+Si lo que te piden cambia lo que dice una especificación de docs/, no toques el código.
+Dímelo y propón primero el cambio en la especificación.
