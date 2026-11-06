@@ -94,7 +94,7 @@ describe('la ficha', () => {
     responder({ 'GET /api/incidencias/1': fichaDe('Abierta'), 'GET /api/zonas': [] });
     abrir('/incidencias/1');
 
-    expect(await screen.findByRole('button', { name: 'Guardar' })).toBeInTheDocument();
+    expect(await screen.findByRole('button', { name: 'Guardar cambios' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Resolver' })).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Cerrar' })).not.toBeInTheDocument();
   });
@@ -107,7 +107,7 @@ describe('la ficha', () => {
     });
     abrir('/incidencias/1');
 
-    await userEvent.click(await screen.findByRole('button', { name: 'Guardar' }));
+    await userEvent.click(await screen.findByRole('button', { name: 'Guardar cambios' }));
 
     const llamada = simulado.mock.calls.find(([, opciones]) => opciones?.method === 'PUT');
     expect(Object.keys(JSON.parse(llamada![1]!.body as string)).sort()).toEqual([
@@ -132,7 +132,7 @@ describe('la ficha', () => {
     abrir('/incidencias/1');
 
     expect(await screen.findByRole('button', { name: 'Reabrir' })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: 'Guardar' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Guardar cambios' })).not.toBeInTheDocument();
     expect(screen.getByLabelText('Título')).toBeDisabled();
   });
 

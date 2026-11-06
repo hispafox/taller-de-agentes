@@ -48,10 +48,16 @@ namespace GestorIncidencias.Migrations
                     b.Property<string>("Observaciones")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateOnly?>("Plazo")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Prioridad")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER")
                         .HasDefaultValue(0);
+
+                    b.Property<int?>("TecnicoId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
@@ -63,9 +69,32 @@ namespace GestorIncidencias.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TecnicoId");
+
                     b.HasIndex("ZonaId");
 
                     b.ToTable("Incidencias");
+                });
+
+            modelBuilder.Entity("GestorIncidencias.Tecnico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Activo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tecnicos");
                 });
 
             modelBuilder.Entity("GestorIncidencias.Zona", b =>
@@ -86,9 +115,15 @@ namespace GestorIncidencias.Migrations
 
             modelBuilder.Entity("GestorIncidencias.Incidencia", b =>
                 {
+                    b.HasOne("GestorIncidencias.Tecnico", "Tecnico")
+                        .WithMany()
+                        .HasForeignKey("TecnicoId");
+
                     b.HasOne("GestorIncidencias.Zona", "Zona")
                         .WithMany()
                         .HasForeignKey("ZonaId");
+
+                    b.Navigation("Tecnico");
 
                     b.Navigation("Zona");
                 });

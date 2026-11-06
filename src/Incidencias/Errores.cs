@@ -17,6 +17,11 @@ public static class Errores
         detail: "Una incidencia necesita un título.",
         statusCode: StatusCodes.Status400BadRequest);
 
+    public static IResult NombreObligatorio() => Results.Problem(
+        title: "Falta el nombre",
+        detail: "Un técnico necesita un nombre.",
+        statusCode: StatusCodes.Status400BadRequest);
+
     public static IResult IncidenciaNoExiste(int id) => Results.Problem(
         title: "La incidencia no existe",
         detail: $"No hay ninguna incidencia con el identificador {id}.",

@@ -27,5 +27,6 @@ app.UseStatusCodePages();
 
 app.MapearIncidencias();
 app.MapearZonas();
+app.MapearTecnicos();
 
 app.Run();

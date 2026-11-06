@@ -19,6 +19,13 @@ public static class CargaDeEjemplo
         var sur = new Zona { Nombre = "Sur" };
         datos.Zonas.AddRange(norte, centro, sur);
 
+        var rafa = new Tecnico { Nombre = "Rafa" };
+        var javi = new Tecnico { Nombre = "Javi" };
+        var oscar = new Tecnico { Nombre = "Óscar" };
+        var manolo = new Tecnico { Nombre = "Manolo" };
+        datos.Tecnicos.AddRange(rafa, javi, oscar, manolo);
+        await datos.SaveChangesAsync();
+
         Incidencia Abierta(string titulo, string descripcion, PrioridadIncidencia prioridad, Zona zona, int diasAbierta) => new()
         {
             Titulo = titulo,
@@ -60,6 +67,11 @@ public static class CargaDeEjemplo
             Cerrada("Puerta de garaje no cierra", "Mirador del Parque. Fotocélula ajustada.", PrioridadIncidencia.Urgente, norte, 70, 68),
             Cerrada("Luz de escalera fundida", "Las Acacias 12. Lámpara cambiada.", PrioridadIncidencia.Normal, centro, 120, 118),
         ];
+
+        var hoyFecha = DateOnly.FromDateTime(hoy);
+        (incidencias[0].Tecnico, incidencias[0].Plazo) = (rafa, hoyFecha.AddDays(-1));
+        (incidencias[1].Tecnico, incidencias[1].Plazo) = (javi, hoyFecha.AddDays(3));
+        (incidencias[2].Tecnico, incidencias[2].Plazo) = (oscar, hoyFecha);
 
         foreach (var incidencia in incidencias)
         {

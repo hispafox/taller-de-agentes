@@ -48,7 +48,7 @@ export default function Ficha() {
           zonaId: incidencia.zonaId,
         }}
         soloLectura={cerrada}
-        textoBoton="Guardar"
+        textoBoton="Guardar cambios"
         alGuardar={guardar}
       />
       <div className="acciones">

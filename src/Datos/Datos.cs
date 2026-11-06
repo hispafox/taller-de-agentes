@@ -6,6 +6,7 @@ public class Datos(DbContextOptions<Datos> opciones) : DbContext(opciones)
 {
     public DbSet<Incidencia> Incidencias => Set<Incidencia>();
     public DbSet<Zona> Zonas => Set<Zona>();
+    public DbSet<Tecnico> Tecnicos => Set<Tecnico>();
 
     protected override void OnModelCreating(ModelBuilder modelo)
     {
@@ -18,5 +19,7 @@ public class Datos(DbContextOptions<Datos> opciones) : DbContext(opciones)
         });
 
         modelo.Entity<Zona>().Property(z => z.Nombre).HasMaxLength(100);
+        modelo.Entity<Tecnico>().Property(t => t.Nombre).HasMaxLength(100);
+        modelo.Entity<Tecnico>().Property(t => t.Activo).HasDefaultValue(true);
     }
 }

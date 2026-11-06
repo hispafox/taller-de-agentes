@@ -29,6 +29,22 @@ public class MigracionesPruebas : IDisposable
     }
 
     [Fact]
+    public void C06_La_migracion_conserva_las_incidencias_que_ya_existen()
+    {
+        using var datos = new Datos(Opciones);
+        var migrador = datos.GetService<IMigrator>();
+
+        migrador.Migrate("Archivado");  // la última migración antes del cambio
+        datos.Database.ExecuteSql($"INSERT INTO Incidencias (Titulo) VALUES ('Fuga en el garaje')");
+        migrador.Migrate();             // hasta la última
+
+        var incidencia = datos.Incidencias.Single();
+        Assert.Equal("Fuga en el garaje", incidencia.Titulo);
+        Assert.Null(incidencia.TecnicoId);
+        Assert.Null(incidencia.Plazo);
+    }
+
+    [Fact]
     public void El_modelo_no_tiene_cambios_sin_migracion()
     {
         using var datos = new Datos(Opciones);
