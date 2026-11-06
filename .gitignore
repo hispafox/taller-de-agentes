@@ -1,0 +1,28 @@
+# .NET
+bin/
+obj/
+*.user
+.vs/
+
+# Node
+node_modules/
+dist/
+coverage/
+
+# Base de datos local
+*.db
+*.db-shm
+*.db-wal
+
+# Lo que generan los scripts (revisiones, exportaciones, evaluaciones)
+salida/
+
+# Playwright
+test-results/
+playwright-report/
+
+# Skills de documentos: se usan en local y no se suben nunca
+.github/skills/docx/
+.github/skills/pdf/
+.github/skills/pptx/
+.github/skills/xlsx/

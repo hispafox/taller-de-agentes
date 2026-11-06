@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/pruebas/">
+    <Project Path="pruebas/Incidencias.Pruebas/Incidencias.Pruebas.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/GestorIncidencias.csproj" />
+  </Folder>
+</Solution>

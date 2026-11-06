@@ -1,0 +1,90 @@
+/* #C62828 sobre blanco da 5,62:1. #E53935 se queda en 4,22:1 y no llega al 4,5:1 del texto normal. */
+:root {
+  --rojo: #c62828;
+  --texto: #1f2933;
+  --borde: #d5dae0;
+  --fondo-suave: #f3f5f7;
+  font-family: system-ui, 'Segoe UI', sans-serif;
+  color: var(--texto);
+  background: #fff;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--fondo-suave);
+  border-bottom: 1px solid var(--borde);
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--borde);
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.35rem;
+  font: inherit;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+button {
+  padding: 0.4rem 0.9rem;
+  font: inherit;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* El rojo de la aplicación. Siempre junto a un texto: el color solo no basta. */
+.aviso-rojo {
+  color: var(--rojo);
+  font-weight: 600;
+}
+
+[role='alert'] {
+  color: var(--rojo);
+}
