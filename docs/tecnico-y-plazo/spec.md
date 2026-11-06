@@ -1,6 +1,6 @@
 # Técnico responsable y plazo
 
-- Estado: Borrador
+- Estado: Aprobada
 - Requisitos: RF-01 a RF-05, en docs/encargo/requisitos.md
 - Diseño: arquitectura.md
 - Decisiones: 0001, 0002 y decisiones.md
@@ -42,16 +42,9 @@ se ha pasado de plazo.
 | C-07 | Una incidencia con plazo de ayer | Se mira la lista | La fecha sale en rojo con el texto «Fuera de plazo» | RF-04 |
 | C-08 | Una incidencia con plazo de hoy | Se mira la lista | No sale fuera de plazo | RF-04 |
 | C-09 | Incidencias de varios técnicos | Se filtra por uno | Salen solo las suyas | RF-05 |
+| C-10 | Una incidencia cerrada | Se intenta asignar un técnico | Da error y la incidencia no cambia. Primero se reabre | RF-01 |
+| C-11 | Una incidencia abierta | Se le pone un plazo que ya ha pasado | Se guarda, y sale fuera de plazo desde el primer momento | RF-02 |
 
 ## Preguntas abiertas
 
-- PE-01 · ¿Se puede asignar un técnico a una incidencia cerrada?
-  Para: Elena.
-  Propuesta: no. Cerrada quiere decir que la oficina ya ha revisado el parte.
-  Primero se reabre.
-  Espera la respuesta: un caso nuevo, C-10.
-- PE-02 · ¿Se puede poner un plazo que ya ha pasado?
-  Para: Elena.
-  Propuesta: sí. Nuria dijo «Es una fecha y ya está». La incidencia saldría
-  fuera de plazo desde el primer momento.
-  Espera la respuesta: un caso nuevo, C-11.
+Ninguna. PE-01 y PE-02, contestadas por Elena: se aceptan las dos propuestas.
