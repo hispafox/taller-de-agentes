@@ -1,0 +1,97 @@
+# Técnico responsable y plazo · Arquitectura
+
+## 1. Introducción y objetivos
+
+Cada incidencia dice quién responde de ella y para cuándo. Requisitos: RF-01 a RF-05 y RNF-01, en `docs/encargo/requisitos.md`.
+
+## 2. Restricciones
+
+Las tecnologías del repositorio. El cliente lo quiere antes de Navidad.
+
+## 3. Contexto y alcance
+
+```mermaid
+flowchart TB
+    C([Quien coordina los avisos]) --> S[Gestor de incidencias]
+    T([Técnicos]) --> S
+```
+
+## 5. Vista de bloques
+
+```mermaid
+flowchart LR
+    N([Navegador]) --> W[Interfaz web<br/>React]
+    W -->|HTTP y JSON| A[API<br/>ASP.NET Core]
+    A -->|Entity Framework Core| D[(SQLite)]
+```
+
+```mermaid
+erDiagram
+    TECNICO |o--o{ INCIDENCIA : "es responsable de"
+    TECNICO {
+        int Id
+        string Nombre
+        bool Activo
+    }
+    INCIDENCIA {
+        int Id
+        int TecnicoId "opcional"
+        date Plazo "opcional"
+    }
+```
+
+| Elemento del diseño | Requisito | Dónde va |
+|---|---|---|
+| Lista de técnicos, que mantiene quien coordina | RF-03 | `src/Tecnicos/` |
+| Técnico y plazo en la incidencia, opcionales | RF-01, RF-02 | `src/Incidencias/` |
+| Columnas y filtro en la lista | RF-04, RF-05 | La pantalla de la lista |
+| Migración de la base de datos | RF-01, RF-02 | Las incidencias que ya existen quedan sin técnico y sin plazo |
+
+## 6. Vista de ejecución
+
+```mermaid
+sequenceDiagram
+    actor C as Quien coordina
+    participant W as Interfaz
+    participant A as API
+    participant D as Base de datos
+    C->>W: Elige técnico y plazo
+    W->>A: Pide guardar la asignación
+    A->>D: Busca el técnico
+    alt El técnico no existe
+        A-->>W: Error, como con una zona que no existe
+    else Existe
+        A->>D: Guarda técnico y plazo
+        A-->>W: Incidencia actualizada
+    end
+    W-->>C: Enseña el resultado
+```
+
+## 8. Conceptos transversales
+
+Los errores siguen el patrón que ya usa la API, en `docs/arquitectura.md`.
+
+## 11. Riesgos y deuda técnica
+
+La exportación tiene técnicos escritos de varias formas y avisos a nombre de Tomás, que ya no está. Si hubiera que importarla, habría que limpiarla antes.
+
+## 12. Glosario
+
+Ver `docs/vocabulario.md`.
+
+## Pantallas
+
+### Lista de incidencias
+- Columna Técnico: el nombre, o «Sin asignar».
+- Columna Plazo: la fecha. Si está fuera de plazo, la fecha en rojo (#C62828 sobre blanco, 5,62:1) con el texto «Fuera de plazo».
+- Filtro por técnico, encima de la lista, con la etiqueta visible «Técnico».
+
+## Decisiones pendientes
+
+1. La lista de técnicos. El cliente pide que la lleve quien coordina, en la aplicación,
+   y descarta la hoja de nóminas. Este documento parte de una lista propia; la otra opción
+   es texto libre con validación. Falta que una persona lo acepte.
+2. Qué pasa cuando un técnico se va. El cliente pide no perder quién llevaba cada aviso,
+   y que no queden avisos abiertos a su nombre sin que nadie se entere. «Cómo se hace,
+   ya es cosa del equipo de desarrollo». Opciones: impedir la baja, quitarle los avisos,
+   o marcarlo inactivo y avisar.
