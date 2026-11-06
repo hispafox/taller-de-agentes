@@ -1,0 +1,39 @@
+aviso;fecha;edificio;descripcion;prioridad;tecnico;plazo;estado;cierre;horas;observaciones
+2301;01/09/2026;Las Acacias 12;Luz de escalera fundida en el 3.º;normal;Rafa;04/09/2026;cerrado;03/09/2026;0,5;
+2302;01/09/2026;Mirador del Parque;Puerta de garaje no cierra;urgente;JAVI;02/09/2026;cerrado;02/09/2026;2;
+2303;02/09/2026;Olmos 3;Bajante atascada;Alta;Javi / Óscar;;cerrado;04/09/2026;6;van dos
+2304;03/09/2026;Las Acacias 12;Portero automático no abre;normal;rafa;esta semana;cerrado;08/09/2026;1,5;
+2305;04/09/2026;Ronda Norte 40;Humedad en techo del trastero 7;normal;Tomás;11/09/2026;pendiente pieza;;;Tomás ya no está en la empresa
+2306;07/09/2026;Olmos 3;Ascensor parado en planta 2;URGENTE;;URGENTE;cerrado;07/09/2026;;lo atendió la empresa del ascensor
+2307;07/09/2026;Pinar 8;Grupo de presión hace ruido;normal;Manolo;2026-09-14;cerrado;15/09/2026;3;
+2308;08/09/2026;Ronda Norte 40;Fuga en el cuarto de contadores;urgente;Rafael M.;09/09/2026;resuelto;;4;sin parte
+2309;09/09/2026;Las Acacias 12;Cristal roto en el portal;normal;Óscar;;cerrado;12/09/2026;1;
+2310;10/09/2026;Mirador del Parque;Caldera comunitaria sin presión;urgente;Javi / Rafa;11/09/2026;cerrado;11/09/2026;5;van dos
+2311;11/09/2026;Pinar 8;Extintor caducado en el garaje;;Elena lo mira;;abierto;;;
+2312;14/09/2026;Olmos 3;Gotera en el ático;Alta;Óscar;21/09/2026;Abierta;;;
+2313;15/09/2026;Ronda Norte 40;Luz de emergencia no funciona;normal;Tomás;;abierto;;;Tomás ya no está en la empresa
+2314;16/09/2026;Las Acacias 12;Bomba de achique saltando;urgente;rafa;17/09/2026;cerrada;16/09/2026;2;
+2315;17/09/2026;Mirador del Parque;Puerta de garaje hace ruido;normal;Javi;esta semana;cerrado;23/09/2026;1;
+2316;18/09/2026;Pinar 8;Antena sin señal;normal;;;abierto;;;
+2317;21/09/2026;Olmos 3;Limpieza de arquetas;normal;Javi / Manolo;2026-09-30;cerrado;29/09/2026;7;van dos
+2318;22/09/2026;Las Acacias 12;Grifo del cuarto de basuras;normal;Óscar;25/09/2026;cerrado;18/09/2026;0,5;
+2319;23/09/2026;Ronda Norte 40;Bajante rota en el patio;Alta;Javi;30/09/2026;resuelto;;8;falta revisar el parte
+2320;24/09/2026;Pinar 8;Portal sin luz;urgente;Manolo;25/09/2026;cerrado;25/09/2026;1,5;
+2321;25/09/2026;Mirador del Parque;Filtración en la plaza 22;normal;;esta semana;abierto;;;
+2322;28/09/2026;Olmos 3;Timbre del 2.º B;normal;Rafa;02/10/2026;cerrado;01/10/2026;0,5;
+2323;29/09/2026;Las Acacias 12;Revisión de extintores;normal;Manolo;;cerrado;30/09/2026;2;
+2324;30/09/2026;Ronda Norte 40;Barandilla suelta en la escalera;Alta;Óscar;2026-10-02;Abierta;;;pendiente de soldador
+2325;01/10/2026;Pinar 8;Caldera con error E04;urgente;Javi;02/10/2026;cerrado;02/10/2026;3;
+2326;02/10/2026;Mirador del Parque;Fuga en el garaje, plaza 14;urgente;;URGENTE;abierto;;;Rafa dice que la lleva Javi, Javi dice que Rafa
+2327;05/10/2026;Olmos 3;Humedad en la pared del portal;normal;Rafael M.;09/10/2026;resuelto;;2;
+2328;06/10/2026;Las Acacias 12;Puerta del trastero no abre;normal;Óscar;esta semana;cerrado;09/10/2026;1;
+2329;07/10/2026;Ronda Norte 40;Cuadro eléctrico salta;urgente;Javi / Óscar;08/10/2026;cerrado;08/10/2026;4;van dos
+2330;08/10/2026;Pinar 8;Olor a gas en el cuarto de calderas;urgente;Manolo;08/10/2026;cerrado;08/10/2026;2;
+2331;09/10/2026;Olmos 3;Gotera en el ático;Alta;Óscar;16/10/2026;abierto;;;creo que es la misma del 14/09
+2332;13/10/2026;Mirador del Parque;Luz del garaje parpadea;normal;;;abierto;;;
+2333;14/10/2026;Las Acacias 12;Pintar marcas de plazas;normal;Rafa;;pendiente pieza;;;
+2334;15/10/2026;Ronda Norte 40;Grupo de presión sin agua;urgente;JAVI;16/10/2026;resuelto;;3;
+2335;16/10/2026;Pinar 8;Persiana del portal atascada;normal;Tomás;23/10/2026;abierto;;;se ha asignado por costumbre
+2336;19/10/2026;Olmos 3;Revisión de bombas;normal;Manolo;2026-10-30;abierto;;;
+2337;20/10/2026;Mirador del Parque;Filtración en la plaza 14;Alta;Rafa;23/10/2026;abierto;;;¿es la misma que la 2326?
+2338;21/10/2026;Las Acacias 12;Bombilla del ascensor;normal;;;abierto;;;
