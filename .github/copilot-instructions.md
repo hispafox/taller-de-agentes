@@ -16,3 +16,8 @@ Si lo que te piden contradice una decisión de docs/, dímelo antes de seguir.
 
 Antes de crear o cambiar algo en GitHub, ejecuta `git remote -v`
 y di en qué repositorio vas a escribir.
+
+## Documentación
+
+Si al trabajar ves que el código y `docs/` dicen cosas distintas, para y dímelo antes de seguir.
+Si el cambio era intencionado, actualiza el documento en el mismo commit.
