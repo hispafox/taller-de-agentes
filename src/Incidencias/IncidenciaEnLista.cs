@@ -19,11 +19,12 @@ public record IncidenciaDetalle(
     string? Zona,
     DateTime FechaApertura,
     DateTime? FechaResolucion,
-    DateTime? FechaCierre)
+    DateTime? FechaCierre,
+    bool Archivada)
 {
     public static IncidenciaDetalle Desde(Incidencia i) => new(
         i.Id, i.Titulo, i.Descripcion, i.Observaciones, i.Prioridad, i.Estado,
-        i.ZonaId, i.Zona?.Nombre, i.FechaApertura, i.FechaResolucion, i.FechaCierre);
+        i.ZonaId, i.Zona?.Nombre, i.FechaApertura, i.FechaResolucion, i.FechaCierre, i.Archivada);
 }
 
 public record DatosDeIncidencia(

@@ -34,6 +34,7 @@ public static class Cierre
         incidencia.Estado = EstadoIncidencia.Abierta;
         incidencia.FechaResolucion = null;
         incidencia.FechaCierre = null;
+        incidencia.Archivada = false;
         return true;
     }
 }

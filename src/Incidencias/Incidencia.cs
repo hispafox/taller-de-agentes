@@ -25,6 +25,7 @@ public class Incidencia
     public DateTime FechaApertura { get; set; }
     public DateTime? FechaResolucion { get; set; }
     public DateTime? FechaCierre { get; set; }
+    public bool Archivada { get; set; }
     public int? ZonaId { get; set; }
     public Zona? Zona { get; set; }
 }

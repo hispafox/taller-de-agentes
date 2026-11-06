@@ -10,7 +10,7 @@ public static class ListaDeIncidencias
         PrioridadIncidencia? prioridad,
         int? zonaId)
     {
-        var incidencias = datos.Incidencias.AsQueryable();
+        var incidencias = datos.Incidencias.Where(i => !i.Archivada);
 
         if (estado is not null)
             incidencias = incidencias.Where(i => i.Estado == estado);

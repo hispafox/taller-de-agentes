@@ -23,6 +23,9 @@ namespace GestorIncidencias.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Archivada")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 

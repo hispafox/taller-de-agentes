@@ -22,6 +22,7 @@ const fichaDe = (estado: Incidencia['estado']): Incidencia => ({
   zonaId: 1,
   fechaResolucion: null,
   fechaCierre: null,
+  archivada: false,
 });
 
 function responder(rutas: Record<string, unknown>) {
@@ -133,5 +134,20 @@ describe('la ficha', () => {
     expect(await screen.findByRole('button', { name: 'Reabrir' })).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Guardar' })).not.toBeInTheDocument();
     expect(screen.getByLabelText('Título')).toBeDisabled();
+  });
+
+  it('ofrece archivar solo una incidencia cerrada', async () => {
+    responder({ 'GET /api/incidencias/1': fichaDe('Cerrada'), 'GET /api/zonas': [] });
+    abrir('/incidencias/1');
+
+    expect(await screen.findByRole('button', { name: 'Archivar' })).toBeInTheDocument();
+  });
+
+  it('no ofrece archivar otra vez lo que ya está archivado', async () => {
+    responder({ 'GET /api/incidencias/1': { ...fichaDe('Cerrada'), archivada: true }, 'GET /api/zonas': [] });
+    abrir('/incidencias/1');
+
+    expect(await screen.findByText(/\(archivada\)/)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Archivar' })).not.toBeInTheDocument();
   });
 });

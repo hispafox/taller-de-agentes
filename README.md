@@ -2,7 +2,7 @@
 
 Un gestor de incidencias de mantenimiento, pequeño a propósito, y el repositorio de prácticas del curso de orquestación de agentes y skills.
 
-Las incidencias se abren, se editan, se resuelven, se reabren y se cierran. Se filtran y se buscan, y cada una tiene su prioridad y su zona.
+Las incidencias se abren, se editan, se resuelven, se reabren, se cierran y se archivan. Se filtran y se buscan, y cada una tiene su prioridad y su zona.
 
 ## Qué hay dentro
 

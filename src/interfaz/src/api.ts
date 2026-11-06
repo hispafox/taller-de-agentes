@@ -16,6 +16,7 @@ export interface Incidencia extends IncidenciaEnLista {
   zonaId: number | null;
   fechaResolucion: string | null;
   fechaCierre: string | null;
+  archivada: boolean;
 }
 
 export interface DatosDeIncidencia {
@@ -77,7 +78,7 @@ export function editarIncidencia(id: string, datos: DatosDeIncidencia) {
   return pedir<Incidencia>(`/incidencias/${id}`, conCuerpo('PUT', datos));
 }
 
-export function cambiarEstado(id: string, accion: 'resolver' | 'cerrar' | 'reabrir') {
+export function cambiarEstado(id: string, accion: 'resolver' | 'cerrar' | 'reabrir' | 'archivar') {
   return pedir<Incidencia>(`/incidencias/${id}/${accion}`, { method: 'POST' });
 }
 

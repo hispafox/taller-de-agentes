@@ -19,7 +19,7 @@ export default function Ficha() {
     editarIncidencia(id, datos).then(setIncidencia).catch((e: Error) => setError(e.message));
   }
 
-  function accion(nombre: 'resolver' | 'cerrar' | 'reabrir') {
+  function accion(nombre: 'resolver' | 'cerrar' | 'reabrir' | 'archivar') {
     setError(null);
     cambiarEstado(id, nombre).then(setIncidencia).catch((e: Error) => setError(e.message));
   }
@@ -33,7 +33,10 @@ export default function Ficha() {
   return (
     <>
       <h1>{incidencia.titulo}</h1>
-      <p>Estado: {incidencia.estado}</p>
+      <p>
+        Estado: {incidencia.estado}
+        {incidencia.archivada && ' (archivada)'}
+      </p>
       {error && <p role="alert">{error}</p>}
       <FormularioIncidencia
         key={`${incidencia.id}-${incidencia.estado}`}
@@ -52,6 +55,7 @@ export default function Ficha() {
         {incidencia.estado === 'Abierta' && <button onClick={() => accion('resolver')}>Resolver</button>}
         {incidencia.estado === 'Resuelta' && <button onClick={() => accion('cerrar')}>Cerrar</button>}
         {incidencia.estado !== 'Abierta' && <button onClick={() => accion('reabrir')}>Reabrir</button>}
+        {cerrada && !incidencia.archivada && <button onClick={() => accion('archivar')}>Archivar</button>}
       </div>
     </>
   );

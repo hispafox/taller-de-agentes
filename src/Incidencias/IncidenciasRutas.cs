@@ -16,6 +16,8 @@ public static class IncidenciasRutas
         incidencias.MapPost("/{id:int}/resolver", Resolver);
         incidencias.MapPost("/{id:int}/cerrar", Cerrar);
         incidencias.MapPost("/{id:int}/reabrir", Reabrir);
+        incidencias.MapPost("/{id:int}/archivar", Archivar);
+        incidencias.MapPost("/archivar-cerradas", ArchivarCerradas);
     }
 
     private static async Task<IResult> Leer(int id, Datos datos)
@@ -77,6 +79,12 @@ public static class IncidenciasRutas
 
     private static Task<IResult> Reabrir(int id, Datos datos) =>
         CambiarEstado(id, datos, "reabrir", Cierre.Reabrir);
+
+    private static Task<IResult> Archivar(int id, Datos datos) =>
+        CambiarEstado(id, datos, "archivar", ArchivadoServicio.Archivar);
+
+    private static async Task<IResult> ArchivarCerradas(Datos datos, TimeProvider reloj) =>
+        Results.Ok(new { archivadas = await ArchivadoServicio.ArchivarCerradas(datos, reloj) });
 
     private static async Task<IResult> CambiarEstado(int id, Datos datos, string accion, Func<Incidencia, bool> cambio)
     {

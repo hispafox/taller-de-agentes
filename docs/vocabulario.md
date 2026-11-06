@@ -7,6 +7,7 @@
 | Resolver | Lo hace el técnico, en el edificio, cuando acaba el trabajo. La incidencia queda pendiente de que la oficina revise el parte |
 | Cerrar | Lo hace la oficina, después de revisar el parte. Solo se cierra lo resuelto. Una incidencia cerrada ya no se edita |
 | Reabrir | Volver a dejar abierta una incidencia resuelta o cerrada |
+| Archivar | Marcar una incidencia cerrada para que deje de salir en la lista. Sigue saliendo en la búsqueda y se puede reabrir |
 | Parte | Lo que el técnico apunta del trabajo hecho |
 | Zona | La parte del territorio donde está el edificio |
 | Prioridad | Normal, Alta o Urgente |
