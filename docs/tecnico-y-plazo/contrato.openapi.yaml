@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: Técnico responsable y plazo
+  version: 1.0.0
+paths:
+  /incidencias/{id}/asignacion:
+    put:
+      summary: Pone, cambia o quita el técnico responsable y el plazo
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Asignacion'
+      responses:
+        '200':
+          description: La incidencia, con la asignación guardada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncidenciaAsignada'
+        '400':
+          description: El cuerpo no es válido, o el técnico no existe (el código que usa la API con una zona)
+        '404':
+          description: La incidencia no existe
+        '409':
+          description: La incidencia está cerrada (pendiente de PE-01)
+components:
+  schemas:
+    Asignacion:
+      type: object
+      required: [tecnicoId, plazo]  # los dos, siempre
+      additionalProperties: false
+      properties:
+        tecnicoId:
+          type: [integer, 'null']
+          description: El técnico responsable. Con null, se quita.
+        plazo:
+          type: [string, 'null']
+          format: date
+          description: La fecha límite, sin hora. Con null, se quita.
+    IncidenciaAsignada:
+      type: object
+      required: [id, tecnico, plazo, fueraDePlazo]
+      properties:
+        id:
+          type: integer
+        tecnico:
+          oneOf:
+            - $ref: '#/components/schemas/TecnicoResumen'
+            - type: 'null'
+        plazo:
+          type: [string, 'null']
+          format: date
+        fueraDePlazo:
+          type: boolean
+          description: Lo calcula la API.
+    TecnicoResumen:
+      type: object
+      required: [id, nombre]
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
