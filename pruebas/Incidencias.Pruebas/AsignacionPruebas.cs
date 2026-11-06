@@ -37,6 +37,27 @@ public class AsignacionPruebas : PruebaDeApi
     }
 
     [Fact]
+    public async Task C04_Un_tecnico_que_no_existe_no_cambia_la_incidencia()
+    {
+        var antes = await cliente.GetStringAsync("/incidencias/1");
+
+        await cliente.PutAsJsonAsync("/incidencias/1/asignacion",
+            new { tecnicoId = 999, plazo = "2026-12-15" });
+
+        Assert.Equal(antes, await cliente.GetStringAsync("/incidencias/1"));
+    }
+
+    [Fact]
+    public async Task C03_El_tecnico_y_el_plazo_se_quitan()
+    {
+        await cliente.PutAsJsonAsync("/incidencias/1/asignacion", new { tecnicoId = (int?)null, plazo = (string?)null });
+
+        var leida = await cliente.GetFromJsonAsync<JsonElement>("/incidencias/1");
+        Assert.Equal(JsonValueKind.Null, leida.GetProperty("tecnico").ValueKind);
+        Assert.Equal(JsonValueKind.Null, leida.GetProperty("plazo").ValueKind);
+    }
+
+    [Fact]
     public async Task C05_Al_cerrarla_conserva_su_tecnico()
     {
         await cliente.PostAsync("/incidencias/1/resolver", null);

@@ -18,9 +18,6 @@ public static class AsignacionRutas
         if (incidencia.Estado == EstadoIncidencia.Cerrada)
             return Errores.EstadoNoPermitido("asignar", incidencia.Estado);
 
-        incidencia.Plazo = cuerpo.Plazo;
-        await datos.SaveChangesAsync();
-
         Tecnico? tecnico = null;
         if (cuerpo.TecnicoId is { } tecnicoId)
         {
@@ -30,6 +27,7 @@ public static class AsignacionRutas
         }
 
         incidencia.TecnicoId = cuerpo.TecnicoId;
+        incidencia.Plazo = cuerpo.Plazo;
         await datos.SaveChangesAsync();
 
         var hoy = DateOnly.FromDateTime(reloj.GetUtcNow().UtcDateTime);

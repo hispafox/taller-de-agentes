@@ -55,3 +55,5 @@ src/Incidencias/ y las migraciones existentes.
 
 - R-05 · PE-03 contestada: pasa a C-12.
 - R-06 · T-04 y T-05 cerradas, seguidas: dotnet test y npm test en verde. Sin comprobar: las pruebas de Playwright, que piden la aplicación en marcha.
+
+- R-07 · Verificador: C-03 sin evidencia y C-04 no cumple. Corregidos: prueba primero y código después. Aprobado.
