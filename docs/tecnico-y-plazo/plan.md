@@ -14,11 +14,13 @@ src/Incidencias/ y las migraciones existentes.
 ### T-01 · Los datos y la migración
 - Toca: src/Tecnicos/ (nueva), src/Incidencias/ y una migración.
 - Casos: C-06.
+- Skills: ninguno.
 - Se comprueba: se aplica a una copia de la base con incidencias, y siguen todas.
 
 ### T-02 · La lista de técnicos en la API
 - Toca: src/Tecnicos/.
-- Casos: ninguno. Ver PE-04.
+- Casos: ninguno. El alta, en espera de PE-04.
+- Skills: ninguno.
 - Se comprueba: las rutas responden como dice el contrato.
 
 ### T-03 · Asignar, cambiar y quitar
@@ -30,11 +32,13 @@ src/Incidencias/ y las migraciones existentes.
 ### T-04 · La lista de incidencias en la API
 - Toca: src/Incidencias/.
 - Casos: C-07, C-08 y C-09. En espera de PE-03.
+- Skills: generar-pruebas.
 - Se comprueba: las pruebas de cada caso, con fechas fijas.
 
 ### T-05 · La pantalla
 - Toca: la lista de incidencias de la interfaz.
-- Casos: C-01, C-07 y C-09.
+- Casos: C-01, C-07 y C-09. C-07, en espera de PE-03.
+- Skills: ninguno.
 - Se comprueba: extremo a extremo y plan de pruebas manuales.
 
 ## Preguntas
@@ -43,6 +47,6 @@ src/Incidencias/ y las migraciones existentes.
   ¿sale fuera de plazo? La especificación dice «plazo de ayer» sin decir en qué estado.
   Espera: T-04.
 - PE-04 · Para: quien lleva la especificación. «Una lista de técnicos, que mantiene
-  quien coordina» no tiene ningún caso. T-02 los necesita.
+  quien coordina» no tiene ningún caso. Espera: el alta de T-02.
 
 ## Registro
