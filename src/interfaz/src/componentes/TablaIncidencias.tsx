@@ -30,7 +30,9 @@ export default function TablaIncidencias({ incidencias }: { incidencias: Inciden
             </td>
             <td>{incidencia.estado}</td>
             <td>{incidencia.zona ?? 'Sin zona'}</td>
-            <td>{fecha.format(new Date(incidencia.fechaApertura))}</td>
+            <td>
+              <time dateTime={incidencia.fechaApertura}>{fecha.format(new Date(incidencia.fechaApertura))}</time>
+            </td>
           </tr>
         ))}
       </tbody>
