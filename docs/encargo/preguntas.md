@@ -10,9 +10,12 @@ Se nos ocurre que podría ser una de estas, o lo que nos digáis:
 - Sale solo y Elena lo puede cambiar.
 De esto depende cómo se abre una incidencia. Lo necesitamos para empezar el diseño.
 
-P-02 · ¿Cuántos responsables tiene una incidencia?
-El correo dice que uno solo. Javi pide que salgan los dos cuando van dos, y en la hoja hay cuatro avisos así.
-De esto depende cómo se guarda el responsable.
+P-02 · Cuando en un trabajo van dos técnicos, ¿cómo sale el segundo en la incidencia?
+El correo dice que hay un solo responsable por incidencia. Javi pide que salgan los dos cuando van dos, para que al otro le consten las horas, y en la hoja hay cuatro avisos así. Las dos cosas se pueden cumplir a la vez: uno es el responsable y el otro sale en la incidencia.
+Se nos ocurre que podría ser una de estas, o lo que nos digáis:
+- En las observaciones.
+- En un dato aparte, como técnico que acompaña.
+De esto depende qué se guarda de cada incidencia.
 
 P-03 · ¿Hay que poner técnico y plazo al abrir?
 Elena pregunta si tiene que ser obligatorio, porque a veces aún no sabe quién lo va a llevar.
