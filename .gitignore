@@ -21,7 +21,7 @@ salida/
 test-results/
 playwright-report/
 
-# Skills de documentos de terceros: el curso no los usa. Si alguien los instala aquí, estas líneas evitan subirlos
+# Skills de documentos de terceros. Por si alguien los instala: no se suben nunca
 .github/skills/docx/
 .github/skills/pdf/
 .github/skills/pptx/
