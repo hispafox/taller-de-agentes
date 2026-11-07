@@ -4,8 +4,8 @@ No he podido leer `pizarra-reunion.jpg`: el correo la anuncia y no está en la c
 
 | Id | Requisito | Tipo | Prioridad propuesta | Fuente | Propuesta del cliente |
 |---|---|---|---|---|---|
-| RF-01 | Cada incidencia tiene un técnico responsable | Funcional | Imprescindible | Correo, punto 1 · Rafa, 08/10 · Administrador, 13/10 | |
-| RF-02 | Cada incidencia tiene un plazo | Funcional | Imprescindible | Correo, punto 1 | |
+| RF-01 | Cada incidencia tiene un técnico responsable | Funcional | Imprescindible | Correo, punto 1 · Rafa, 08/10 · Administrador, 13/10 · Javi, 21/09 | Uno solo (Nuria). Que salgan los dos que van (Javi) |
+| RF-02 | Cada incidencia tiene un plazo | Funcional | Imprescindible | Correo, punto 1 · Paco, 23/09 | Lo pone Elena al abrir (Nuria). Sale solo según la prioridad (Paco) |
 | RF-03 | Cada técnico se identifica de una sola forma | Funcional | Imprescindible | Elena, 01/10 · Exportación, columna `tecnico` | Elegirlo de una lista |
 | RF-04 | Se distingue de un vistazo lo que está fuera de plazo | Funcional | Importante | Elena, 30/09 | En rojo |
 | RF-05 | La lista se filtra por técnico | Funcional | Importante | Manolo, 19/10 | |
