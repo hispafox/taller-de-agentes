@@ -26,7 +26,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/IncidenciaAsignada'
         '400':
-          description: El cuerpo no es válido, o el técnico no existe (el código que usa la API con una zona)
+          description: El cuerpo no es válido, o el técnico no existe (como una zona que no existe)
         '404':
           description: La incidencia no existe
         '409':
