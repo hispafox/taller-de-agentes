@@ -7,7 +7,7 @@
 
 ## Para qué
 
-Nadie sabe quién lleva cada aviso. Una fuga en un garaje llevaba once días abierta porque
+Nadie sabe quién lleva cada incidencia. Una fuga en un garaje llevaba once días abierta porque
 cada técnico pensaba que la llevaba otro. Cada incidencia tiene que decir quién responde
 de ella y para cuándo, y quien coordina tiene que ver lo que está sin asignar y lo que
 se ha pasado de plazo.
@@ -24,10 +24,10 @@ se ha pasado de plazo.
 
 - Calcular el plazo según la prioridad. Lo pone quien coordina, y es una fecha.
 - Dos responsables en una incidencia. El segundo va en las observaciones.
-- Que un técnico cambie su propio aviso, ni al irse de vacaciones.
-- Avisar al técnico cuando le asignan algo.
+- Que un técnico cambie él mismo el técnico o el plazo, ni al irse de vacaciones.
+- Notificar al técnico cuando le asignan una incidencia.
 - Importar la hoja de avisos.
-- Contratos, inventario, facturación, fotos y lo que ven los administradores.
+- Los contratos de mantenimiento, el inventario, la facturación, las fotos y lo que ven los administradores.
 
 ## Cómo se comporta
 
