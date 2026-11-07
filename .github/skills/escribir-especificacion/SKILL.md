@@ -16,6 +16,11 @@ description: Escribe o actualiza la especificación de una funcionalidad con el 
    podría añadir de buena fe.
 5. Lo que falte por decidir va a «Preguntas abiertas», con para quién es,
    tu propuesta y qué caso espera la respuesta.
+6. Si la funcionalidad cambia una API, escribe docs/<funcionalidad>/contrato.openapi.yaml
+   con lo que cambia, siguiendo el estilo y los nombres de la API que ya existe. Lee antes
+   el código o el documento OpenAPI que tenga, y enlaza el contrato desde spec.md.
+   Fija los nombres, los tipos, qué quiere decir que un dato no venga, lo que devuelve,
+   quién calcula lo calculado y los errores. Lo que tengas que elegir, propónlo como pregunta.
 
 ## Lo que se suele torcer
 
