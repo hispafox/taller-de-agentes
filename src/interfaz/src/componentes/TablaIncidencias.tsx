@@ -9,7 +9,8 @@ function Plazo({ incidencia }: { incidencia: IncidenciaEnLista }) {
   }
 
   const dia = fecha.format(new Date(`${incidencia.plazo}T00:00:00`));
-  return incidencia.fueraDePlazo ? <span className="aviso-rojo">{dia} · Fuera de plazo</span> : <>{dia}</>;
+  const cuando = <time dateTime={incidencia.plazo}>{dia}</time>;
+  return incidencia.fueraDePlazo ? <span className="aviso-rojo">{cuando} · Fuera de plazo</span> : cuando;
 }
 
 export default function TablaIncidencias({ incidencias }: { incidencias: IncidenciaEnLista[] }) {
@@ -45,7 +46,9 @@ export default function TablaIncidencias({ incidencias }: { incidencias: Inciden
             <td>
               <Plazo incidencia={incidencia} />
             </td>
-            <td>{fecha.format(new Date(incidencia.fechaApertura))}</td>
+            <td>
+              <time dateTime={incidencia.fechaApertura}>{fecha.format(new Date(incidencia.fechaApertura))}</time>
+            </td>
           </tr>
         ))}
       </tbody>
