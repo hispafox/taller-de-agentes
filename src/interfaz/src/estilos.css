@@ -88,3 +88,9 @@ button {
 [role='alert'] {
   color: var(--rojo);
 }
+
+/* Las fechas ocupan siempre lo mismo: la ronda de capturas las tapa con mask, y el recuadro mide lo que mide el elemento. */
+td time {
+  display: inline-block;
+  width: 7em;
+}
