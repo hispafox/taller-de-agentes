@@ -1,6 +1,8 @@
 # Prueba del skill: exporta un documento de muestra en un repositorio de usar y tirar.
 # Salidas: 0 bien · 1 ha fallado · 2 falta una herramienta.
 $script = Resolve-Path "$PSScriptRoot/../scripts/md-a-word.mjs"
+$exportar = Resolve-Path "$PSScriptRoot/../../../../scripts/exportar-documento.ps1"
+$plantilla = Resolve-Path "$PSScriptRoot/../../../../docs/plantillas/plantilla.docx"
 $carpeta = Join-Path ([IO.Path]::GetTempPath()) "prueba-word-$([guid]::NewGuid().ToString('N'))"
 New-Item -ItemType Directory -Force "$carpeta/docs" | Out-Null
 Push-Location $carpeta
@@ -34,6 +36,23 @@ try {
 
     $faltan = 'Título de prueba', 'negrita', 'Mañana', 'Proyecto', 'v1.1' | Where-Object { $xml -notmatch $_ }
     if ($faltan) { Write-Output "FALLO: no sale en el Word: $($faltan -join ', ')"; exit 1 }
+
+    # La vía de Pandoc, con la plantilla de docs/plantillas/. Sin Pandoc no se prueba, y se dice.
+    if (Get-Command pandoc -ErrorAction SilentlyContinue) {
+        Remove-Item 'salida' -Recurse -Force
+        & $exportar -Fuente docs/muestra.md -Plantilla $plantilla | Out-Null
+        if ($LASTEXITCODE -ne 0) { Write-Output "FALLO: la vía de Pandoc salió con $LASTEXITCODE"; exit 1 }
+        $zip = [IO.Compression.ZipFile]::OpenRead((Resolve-Path 'salida/muestra-v1.1.docx'))
+        $lector = [IO.StreamReader]::new($zip.GetEntry('word/document.xml').Open())
+        $xml = $lector.ReadToEnd()
+        $lector.Dispose()
+        $zip.Dispose()
+        $faltan = 'Título de prueba', 'negrita', 'Mañana', 'Proyecto', 'v1.1', 'Heading1' | Where-Object { $xml -notmatch $_ }
+        if ($faltan) { Write-Output "FALLO: no sale en el Word de Pandoc: $($faltan -join ', ')"; exit 1 }
+    }
+    else {
+        Write-Output 'Sin Pandoc: la vía de la plantilla no se ha probado.'
+    }
     Write-Output 'Prueba de exportar-word: bien.'
 }
 finally {
