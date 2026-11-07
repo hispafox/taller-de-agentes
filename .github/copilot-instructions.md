@@ -21,3 +21,9 @@ y di en qué repositorio vas a escribir.
 
 Si al trabajar ves que el código y `docs/` dicen cosas distintas, para y dímelo antes de seguir.
 Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
+
+## Documentos que salen del repositorio
+
+Todo documento que salga del repositorio lleva su bloque de control: proyecto, versión,
+fecha y commit de origen. Lo escriben los skills exportar-word, exportar-pdf y exportar-excel,
+nunca a mano. Si te piden un documento sin pasar por ellos, dímelo antes de seguir.
