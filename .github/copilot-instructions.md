@@ -32,3 +32,9 @@ Si hay que cambiarla, propón un registro nuevo que la sustituya.
 Si lo que te piden cambia lo que dice una especificación de docs/, no toques el código.
 Dímelo y propón primero el cambio en la especificación.
 Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
+
+## Documentos que salen del repositorio
+
+Todo documento que salga del repositorio lleva su bloque de control: proyecto, versión,
+fecha y commit de origen. Lo escriben los skills exportar-word, exportar-pdf y exportar-excel,
+nunca a mano. Si te piden un documento sin pasar por ellos, dímelo antes de seguir.
