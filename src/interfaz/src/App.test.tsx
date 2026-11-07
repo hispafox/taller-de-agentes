@@ -117,7 +117,7 @@ describe('la lista de incidencias', () => {
     abrir('/incidencias');
 
     const fila = await screen.findByRole('row', { name: /Fuga en el garaje/ });
-    expect([...fila.querySelectorAll('time')].map((t) => t.getAttribute('datetime'))).toEqual([fuga.fechaApertura, '2026-11-05']);
+    expect([...fila.querySelectorAll('time')].map((t) => t.getAttribute('datetime'))).toEqual(['2026-11-05', fuga.fechaApertura]);
   });
 
   it('marca la prioridad urgente con el texto y con la clase del rojo', async () => {
