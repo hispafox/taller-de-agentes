@@ -14,9 +14,9 @@ if (git status --porcelain -- docs) {
     exit 1
 }
 
-$version = git describe --tags --abbrev=0 2>$null
+$version = git describe --tags --exact-match 2>$null
 if (-not $version) {
-    Write-Output 'El repositorio no tiene ninguna etiqueta de versión.'
+    Write-Output 'El commit actual no tiene etiqueta de versión. Etiqueta lo que vas a entregar.'
     exit 1
 }
 
