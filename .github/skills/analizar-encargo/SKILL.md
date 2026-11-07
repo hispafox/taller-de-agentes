@@ -5,8 +5,9 @@ description: Procedimiento para analizar lo que manda un cliente. Separa hechos,
 Nada cuenta como dicho si no está en la entrada.
 
 Para cada requisito:
-- Cada hecho lleva una cita literal, con el fichero y quién lo dijo.
-  Si no encuentras la cita, no es un hecho.
+- Cada hecho lleva su fuente. Si lo dijo alguien, la cita literal, con el fichero
+  y quién lo dijo. Si sale de unos datos, el fichero, la columna y lo que has contado.
+  Si no encuentras la fuente, no es un hecho.
 - Lo que rellenes tú es una suposición, con su número, por qué la haces y qué cambia si es falsa.
   Nunca va dentro de la frase del requisito.
 
