@@ -20,7 +20,7 @@ y di en qué repositorio vas a escribir.
 ## Documentación
 
 Si al trabajar ves que el código y `docs/` dicen cosas distintas, para y dímelo antes de seguir.
-Si el cambio era intencionado, actualiza el documento en el mismo commit.
+Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
 
 ## Decisiones
 
@@ -31,7 +31,6 @@ Si hay que cambiarla, propón un registro nuevo que la sustituya.
 
 Si lo que te piden cambia lo que dice una especificación de docs/, no toques el código.
 Dímelo y propón primero el cambio en la especificación.
-Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
 
 ## Documentos que salen del repositorio
 
