@@ -61,9 +61,9 @@ def main():
     if git("status", "--porcelain", "--", "docs"):
         print("Hay cambios sin confirmar en docs/. Haz el commit antes de exportar.")
         return 1
-    version = git("describe", "--tags", "--abbrev=0")
+    version = git("describe", "--tags", "--exact-match")
     if not version:
-        print("El repositorio no tiene ninguna etiqueta de versión.")
+        print("El commit actual no tiene etiqueta de versión. Etiqueta lo que vas a entregar.")
         return 1
 
     libro = Workbook()
