@@ -52,5 +52,5 @@ src/Incidencias/ y las migraciones existentes.
 ## Registro
 
 - R-01 · T-01 cerrada: dotnet test en verde. Migración aplicada a una copia con datos, y siguen todas.
-- R-02 · T-02 cerrada: dotnet test en verde. PE-04 sigue sin caso: la lista se comprueba con sus pruebas.
+- R-02 · T-02 cerrada, sin el alta, que espera PE-04: dotnet test en verde. La lista se comprueba con sus pruebas.
 - R-03 · T-04 en espera de PE-03.
