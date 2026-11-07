@@ -26,3 +26,4 @@ Si el cambio era intencionado, actualiza el documento en el mismo commit.
 
 Nunca edites el contenido de una decisión aceptada de docs/decisiones/.
 Si hay que cambiarla, propón un registro nuevo que la sustituya.
+Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
