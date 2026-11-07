@@ -7,8 +7,8 @@ description: Saca un documento de docs/ a Word con el bloque de control, y pasa 
 
 El texto se mantiene en `docs/`. El Word es un resultado que se vuelve a sacar y nunca se retoca a mano.
 
-1. Comprueba que `docs/` no tiene cambios sin confirmar y que el repositorio tiene una etiqueta de versión.
-   Si falta alguna, dímelo y para: la etiqueta la pone una persona.
+1. Comprueba que `docs/` no tiene cambios sin confirmar y que el commit tiene su etiqueta de versión
+   (`git describe --tags --exact-match`). Si falta alguna, dímelo y para: la etiqueta la pone una persona.
 2. Si `pandoc --version` responde, ejecuta `pwsh scripts/exportar-documento.ps1 -Fuente <ruta>`.
    Da el aspecto de `docs/plantillas/plantilla.docx`.
 3. Si no hay Pandoc, ejecuta `node <carpeta de este skill>/scripts/md-a-word.mjs <ruta>`.
@@ -16,6 +16,7 @@ El texto se mantiene en `docs/`. El Word es un resultado que se vuelve a sacar y
 4. Devuelve la ruta del fichero, su versión y su commit.
 
 Para leer un Word que ha vuelto corregido: `pandoc <fichero>.docx -t gfm -o salida/corregido.md`.
+Así acepta los cambios marcados. Con `--track-changes=all` los conserva, con su autor, su fecha y los comentarios.
 Compáralo con el documento en el commit que dice su bloque de control. No cambies nada en `docs/` hasta que te lo diga.
 
 ## Lo que se suele torcer
