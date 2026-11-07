@@ -24,8 +24,9 @@ Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo e
 
 ## Decisiones
 
-Nunca edites el contenido de una decisión aceptada de docs/decisiones/.
-Si hay que cambiarla, propón un registro nuevo que la sustituya.
+De una decisión aceptada de docs/decisiones/ solo cambias el estado y las erratas.
+Si hay que cambiarla, propón un registro nuevo que la sustituya, y pasa la vieja
+a Sustituida en el mismo pull request.
 
 ## Especificaciones
 
