@@ -31,9 +31,9 @@ if (git('status', '--porcelain', '--', 'docs')) {
 
 let version;
 try {
-  version = git('describe', '--tags', '--abbrev=0');
+  version = git('describe', '--tags', '--exact-match');
 } catch {
-  console.log('El repositorio no tiene ninguna etiqueta de versión.');
+  console.log('El commit actual no tiene etiqueta de versión. Etiqueta lo que vas a entregar.');
   process.exit(1);
 }
 
