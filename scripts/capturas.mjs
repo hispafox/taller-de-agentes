@@ -42,7 +42,8 @@ let fallos = 0;
 for (const id of huecos) {
   try {
     await ronda[id](pagina);
-    await pagina.screenshot({ path: `${carpeta}/${id}.png`, animations: 'disabled' });
+    // Las fechas llegan de la API, relativas al día de la carga: se tapan para que la captura salga igual.
+    await pagina.screenshot({ path: `${carpeta}/${id}.png`, animations: 'disabled', mask: [pagina.locator('time')] });
     console.log(`ok     ${id}`);
   } catch (error) {
     fallos += 1;

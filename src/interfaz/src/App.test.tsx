@@ -108,6 +108,18 @@ describe('la lista de incidencias', () => {
     expect(simulado).toHaveBeenCalledWith('/api/incidencias?estado=Resuelta', undefined);
   });
 
+  it('pone las fechas en elementos time, que la ronda de capturas tapa', async () => {
+    responder({
+      'GET /api/incidencias': [{ ...fuga, tecnico: 'Rafa', plazo: '2026-11-05', fueraDePlazo: true }],
+      'GET /api/zonas': [],
+      'GET /api/tecnicos': [],
+    });
+    abrir('/incidencias');
+
+    const fila = await screen.findByRole('row', { name: /Fuga en el garaje/ });
+    expect([...fila.querySelectorAll('time')].map((t) => t.getAttribute('datetime'))).toEqual([fuga.fechaApertura, '2026-11-05']);
+  });
+
   it('marca la prioridad urgente con el texto y con la clase del rojo', async () => {
     responder({ 'GET /api/incidencias': [fuga], 'GET /api/zonas': [] });
     abrir('/incidencias');
