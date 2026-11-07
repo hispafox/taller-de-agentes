@@ -18,5 +18,6 @@ description: Convierte las historias de una funcionalidad en issues de GitHub co
 
 ## Lo que se suele torcer
 
-- Una historia que ya tiene número en issues.md está publicada. No la publiques otra vez.
+- Una historia que ya tiene número en issues.md está publicada. No la publiques otra vez:
+  si ha cambiado, actualiza ese issue, con el cambio en el borrador y cuando te lo diga.
 - Si hay un parecido, no decides tú. Lo enseñas en el borrador.

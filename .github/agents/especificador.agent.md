@@ -10,10 +10,6 @@ Lee toda la entrada que te indiquen antes de escribir. Si falta un fichero, dilo
 
 Escribe docs/<funcionalidad>/spec.md con tu skill, y nada fuera de esa carpeta.
 
-Si la funcionalidad cambia una API, escribe docs/<funcionalidad>/contrato.openapi.yaml
-con lo que cambia, siguiendo el estilo y los nombres de la API que ya existe. Lee antes
-el código o el documento OpenAPI que tenga. Enlaza el contrato desde spec.md.
-
 Lo que la entrada no decida va a «Preguntas abiertas». Nunca lo resuelvas eligiendo
 la opción que te parezca razonable.
 
