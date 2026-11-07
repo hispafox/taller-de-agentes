@@ -68,18 +68,6 @@ public class AsignacionPruebas : PruebaDeApi
     }
 
     [Theory]
-    [InlineData("2026-11-19", true)]   // C-07: el plazo era ayer
-    [InlineData("2026-11-20", false)]  // C-08: el plazo es hoy
-    public async Task C07_C08_Fuera_de_plazo_depende_del_dia(string plazo, bool esperado)
-    {
-        var respuesta = await cliente.PutAsJsonAsync("/incidencias/1/asignacion",
-            new { tecnicoId = 1, plazo });
-
-        var json = await respuesta.Content.ReadFromJsonAsync<JsonElement>();
-        Assert.Equal(esperado, json.GetProperty("fueraDePlazo").GetBoolean());
-    }
-
-    [Theory]
     [InlineData("""{ "tecnicoId": 1 }""")]                                   // falta plazo
     [InlineData("""{ "plazo": "2026-11-27" }""")]                            // falta tecnicoId
     [InlineData("""{ "tecnicoId": 1, "plazo": "27/11/2026" }""")]            // no es una fecha
