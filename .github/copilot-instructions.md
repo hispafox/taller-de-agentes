@@ -39,3 +39,9 @@ Lo esperado sale de la especificación o de la petición, y nunca del código.
 No borres ni debilites una comprobación para que pase. Si te parece mal, dímelo.
 Pasa las pruebas relacionadas y di cuáles han fallado y cuáles no has podido pasar.
 Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
+
+## Documentos que salen del repositorio
+
+Todo documento que salga del repositorio lleva su bloque de control: proyecto, versión,
+fecha y commit de origen. Lo escriben los skills exportar-word, exportar-pdf y exportar-excel,
+nunca a mano. Si te piden un documento sin pasar por ellos, dímelo antes de seguir.

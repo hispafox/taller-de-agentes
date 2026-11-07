@@ -5,8 +5,8 @@ description: Saca a Excel las tablas de un documento de docs/, con una pestaña 
 
 # Exportar a Excel
 
-1. Comprueba que `docs/` no tiene cambios sin confirmar y que el repositorio tiene una etiqueta de versión.
-   Si falta alguna, dímelo y para.
+1. Comprueba que `docs/` no tiene cambios sin confirmar y que el commit tiene su etiqueta de versión
+   (`git describe --tags --exact-match`). Si falta alguna, dímelo y para.
 2. Ejecuta `py <carpeta de este skill>/scripts/tablas-a-excel.py <ruta> [<ruta> ...]`.
    En Mac o Linux, `python3`. Cada tabla va a su pestaña, y la pestaña Control lleva proyecto, versión, fecha y commit.
 3. Devuelve la ruta del fichero y cuántas tablas ha sacado.
