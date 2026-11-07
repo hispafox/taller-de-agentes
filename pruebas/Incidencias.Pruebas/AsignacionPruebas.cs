@@ -104,7 +104,7 @@ public class AsignacionPruebas : PruebaDeApi
     [InlineData("""{ "tecnicoId": 1 }""")]                                   // falta plazo
     [InlineData("""{ "plazo": "2026-11-27" }""")]                            // falta tecnicoId
     [InlineData("""{ "tecnicoId": 1, "plazo": "27/11/2026" }""")]            // no es una fecha
-    [InlineData("""{ "tecnicoId": 1, "plazo": null, "responsable": 2 }""")]  // campo sin acordar
+    [InlineData("""{ "tecnicoId": 1, "plazo": "2026-11-27", "responsable": 2 }""")]  // campo sin acordar
     public async Task Contrato_Un_cuerpo_que_no_lo_cumple_da_400_y_no_cambia_nada(string cuerpo)
     {
         var antes = await cliente.GetStringAsync("/incidencias/1");
