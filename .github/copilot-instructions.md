@@ -35,6 +35,7 @@ Dímelo y propón primero el cambio en la especificación.
 
 ## Pruebas
 
+Antes de cambiar nada, pasa las pruebas que ya hay y apunta cuáles fallaban.
 Cada cambio lleva sus pruebas en el mismo commit.
 Lo esperado sale de la especificación o de la petición, y nunca del código.
 No borres ni debilites una comprobación para que pase. Si te parece mal, dímelo.
