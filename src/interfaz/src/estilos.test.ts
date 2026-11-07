@@ -7,3 +7,9 @@ it('el rojo de la aplicación es el que da contraste sobre blanco', () => {
 
   expect(estilos).toContain('--rojo: #c62828;');
 });
+
+it('las fechas de la tabla tienen ancho fijo, para que el recuadro del mask no cambie', () => {
+  const estilos = readFileSync(resolve(__dirname, 'estilos.css'), 'utf8');
+
+  expect(estilos).toMatch(/td time \{\s*display: inline-block;\s*width: 7em;\s*\}/);
+});
