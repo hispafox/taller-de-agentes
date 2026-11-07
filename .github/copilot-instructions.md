@@ -31,3 +31,4 @@ Si hay que cambiarla, propón un registro nuevo que la sustituya.
 
 Si lo que te piden cambia lo que dice una especificación de docs/, no toques el código.
 Dímelo y propón primero el cambio en la especificación.
+Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
