@@ -52,7 +52,13 @@ Enlace al vocabulario de docs/.
 
 ## Pantallas
 
-Cada pantalla que cambia, con lo que enseña y cómo se usa.
+Cada pantalla que cambia: qué se ve, en qué estados y con qué colores. El contraste
+de cada pareja de texto y fondo sale de scripts/contraste.ps1, y se escribe aquí antes de
+pasar la revisión de pantallas.
+
+## Decisiones tomadas
+
+Lo que ya ha decidido el cliente, con su cita.
 
 ## Decisiones pendientes
 
