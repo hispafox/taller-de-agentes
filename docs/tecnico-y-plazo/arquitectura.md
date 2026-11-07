@@ -71,6 +71,11 @@ sequenceDiagram
 
 Los errores siguen el patrón que ya usa la API, en `docs/arquitectura.md`.
 
+## 10. Requisitos de calidad
+
+Se usa desde el móvil, en el edificio (RNF-01). Lo que está fuera de plazo se ve de un vistazo,
+también para quien no distingue el rojo (RF-04).
+
 ## 11. Riesgos y deuda técnica
 
 La exportación tiene técnicos escritos de varias formas y avisos a nombre de Tomás, que ya no está. Si hubiera que importarla, habría que limpiarla antes.
@@ -86,12 +91,14 @@ Ver `docs/vocabulario.md`.
 - Columna Plazo: la fecha. Si está fuera de plazo, la fecha en rojo (#C62828 sobre blanco, 5,62:1) con el texto «Fuera de plazo».
 - Filtro por técnico, encima de la lista, con la etiqueta visible «Técnico».
 
+## Decisiones tomadas
+
+- La lista de técnicos va en la aplicación, y la lleva quien coordina. «Que la lleve Elena
+  en la propia aplicación. Lo de sacarla de nóminas, no» (respuesta del cliente, 28-10-2026).
+
 ## Decisiones pendientes
 
-1. La lista de técnicos. El cliente pide que la lleve quien coordina, en la aplicación,
-   y descarta la hoja de nóminas. Este documento parte de una lista propia; la otra opción
-   es texto libre con validación. Falta que una persona lo acepte.
-2. Qué pasa cuando un técnico se va. El cliente pide no perder quién llevaba cada aviso,
+1. Qué pasa cuando un técnico se va. El cliente pide no perder quién llevaba cada aviso,
    y que no queden avisos abiertos a su nombre sin que nadie se entere. «Cómo se hace,
    ya es cosa del equipo de desarrollo». Opciones: impedir la baja, quitarle los avisos,
    o marcarlo inactivo y avisar.
