@@ -41,6 +41,11 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as carpeta:
         print("FALLO: sin etiqueta tenía que salir con 1")
         sys.exit(1)
     git(carpeta, "tag", "v1.0")
+    git(carpeta, "commit", "-q", "--allow-empty", "-m", "despues")
+    if correr(carpeta, "docs/muestra.md").returncode != 1:
+        print("FALLO: con un commit después de la etiqueta tenía que salir con 1")
+        sys.exit(1)
+    git(carpeta, "tag", "v1.1")
     if correr(carpeta, "docs/vacio.md").returncode != 1:
         print("FALLO: sin tablas tenía que salir con 1")
         sys.exit(1)
@@ -49,11 +54,11 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as carpeta:
         print("FALLO:", resultado.stdout, resultado.stderr)
         sys.exit(1)
 
-    libro = load_workbook(raiz / "salida/muestra-v1.0.xlsx")
+    libro = load_workbook(raiz / "salida/muestra-v1.1.xlsx")
     if libro.sheetnames != ["Control", "Tareas"]:
         print("FALLO: pestañas", libro.sheetnames)
         sys.exit(1)
-    if libro["Control"]["B2"].value != "v1.0" or libro["Tareas"]["B2"].value != "120 de 150":
+    if libro["Control"]["B2"].value != "v1.1" or libro["Tareas"]["B2"].value != "120 de 150":
         print("FALLO: contenido")
         sys.exit(1)
     libro.close()

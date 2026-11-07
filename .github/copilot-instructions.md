@@ -27,3 +27,9 @@ Si el cambio era intencionado, actualiza el documento en el mismo commit.
 Nunca edites el contenido de una decisión aceptada de docs/decisiones/.
 Si hay que cambiarla, propón un registro nuevo que la sustituya.
 Cuando un cambio que te pido deja atrás un documento de `docs/`, actualízalo en el mismo commit.
+
+## Documentos que salen del repositorio
+
+Todo documento que salga del repositorio lleva su bloque de control: proyecto, versión,
+fecha y commit de origen. Lo escriben los skills exportar-word, exportar-pdf y exportar-excel,
+nunca a mano. Si te piden un documento sin pasar por ellos, dímelo antes de seguir.
