@@ -19,15 +19,13 @@ Implementa tarea a tarea, en una rama que no sea la principal:
 - Una tarea lleva su código, sus pruebas y su documentación, en un commit.
 - Márcala cuando hayas visto su comprobación, y apunta en el registro la orden,
   el commit y lo que salió.
+- Si las pruebas fallan, corrige y repite, tres rondas como mucho. Si no sale,
+  para y dime lo que has probado y lo que sospechas.
 - Si algo no cuadra con el plan, o una tarea espera una respuesta, para y dímelo.
 - No hagas push.
 
 Antes de dar una tarea por terminada, compila y pasa las pruebas.
 Devuelve la última línea del resultado de cada una.
 Si algo falla, no digas que has terminado: di qué falla y qué has probado.
-
-Si las pruebas fallan, corrige y repite, tres rondas como mucho.
-Si a la tercera siguen fallando, para. Devuelve qué has probado, qué falla
-y qué harías después. No sigas sin que te lo diga.
 
 Cierra con cuatro líneas: Resultado, Comprobado, Sin comprobar y Siguiente.
