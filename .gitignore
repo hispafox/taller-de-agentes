@@ -21,11 +21,7 @@ salida/
 test-results/
 playwright-report/
 
-<<<<<<< HEAD
-# Skills de documentos: se usan en local y no se suben nunca
-=======
 # Skills de documentos de terceros. Por si alguien los instala: no se suben nunca
->>>>>>> d31fa85 (submodulo-6.4/formato-empresa · El comentario del .gitignore, con el texto de M6)
 .github/skills/docx/
 .github/skills/pdf/
 .github/skills/pptx/
