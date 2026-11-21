@@ -30,4 +30,16 @@ Antes de dar una tarea por terminada, compila y pasa las pruebas.
 Devuelve la última línea del resultado de cada una.
 Si algo falla, no digas que has terminado: di qué falla y qué has probado.
 
+Si el cambio toca una señal dura y te digo que lo lleves a revisión:
+1. Pasa pwsh scripts/preparar-revision.ps1 -Base main -Spec docs/<funcionalidad>/spec.md.
+   Si no sale 0, corrige: el Verificador no se lanza.
+2. Delega en el agente Verificador con este encargo, sin añadir nada de lo que has hecho:
+   «Revisa docs/<funcionalidad>/. El script ya ha dejado sus ficheros en salida/revision/.»
+3. Copia su informe, literal, al final de docs/<funcionalidad>/verificacion.md.
+4. Si dice A revisar, corrige solo sus filas, primero la prueba, y vuelve al paso 1.
+   Dos vueltas como mucho.
+5. Si una fila vuelve otra vez, o no estás de acuerdo con ella, para y enséñamela.
+6. Si llegas al límite, para. Dime qué casos siguen sin cumplirse, qué has probado
+   y qué harías después, y apúntalo en el registro de docs/<funcionalidad>/plan.md.
+
 Cierra con cuatro líneas: Resultado, Comprobado, Sin comprobar y Siguiente.
