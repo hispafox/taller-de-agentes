@@ -25,3 +25,16 @@ Entra por el primer paso cuya pregunta siga sin contestar.
 | Auditoría | Auditor | Su informe, y `<f>/auditoria.md` con lo descartado | Sin bloqueos, o una persona decide | De agente y humana | Al Desarrollador, y se verifica otra vez |
 | Manual | Documentador | `docs/manual/` y sus capturas | Las catas de 6.1 y la ronda de 6.2 | Humana y automática | Al Documentador |
 | Pull request | Publicador y una persona | El pull request | Lo trabaja 11.3 | Humana | Borrador, con lo que falta |
+
+## Ruta y modelo por tipo de trabajo
+
+| Tipo de trabajo | Ruta | Modelo | Por qué |
+|---|---|---|---|
+| Un texto o un fallo entendido | | | |
+| Un cambio que no se retoma con el diff | | | |
+| Un cambio corto con una señal dura | | | |
+| Una funcionalidad de un cliente | | | |
+| Documentar lo que existe | | | |
+| Revisar | | | |
+
+Si en alguna fila no hay acuerdo, se escriben las dos posturas y la medición que lo cerraría.
