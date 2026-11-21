@@ -41,6 +41,19 @@ Lo esperado sale de la especificación o de la petición, y nunca del código.
 No borres ni debilites una comprobación para que pase. Si te parece mal, dímelo.
 Pasa las pruebas relacionadas y di cuáles han fallado y cuáles no has podido pasar.
 
+## Señales duras
+
+Un cambio que toque alguna de estas cosas no va por la ruta ligera, aunque sea corto:
+- Contratos públicos: la API y lo que lea otro sistema.
+- Datos: lo que se guarda y cómo se guarda.
+- Migraciones.
+- Permisos: quién puede hacer qué.
+- Pagos.
+- Lo que leen los agentes: .github/ y .mcp.json.
+
+Las rutas están en docs/rutas.md. Esta lista la cambia el equipo en un pull request,
+nunca un caso suelto.
+
 ## Documentos que salen del repositorio
 
 Todo documento que salga del repositorio lleva su bloque de control: proyecto, versión,

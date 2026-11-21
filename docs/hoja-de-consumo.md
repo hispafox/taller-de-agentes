@@ -15,6 +15,6 @@ Una tarea por sesión. Si en un chat hiciste tres cosas, el total no dice cuánt
 
 ## Tareas
 
-| Tarea | Agente | Modelo | Consumo | ¿Servía? |
-|---|---|---|---|---|
-| | | | | |
+| Tarea | Agente | Modelo | Consumo | ¿Servía? | Ruta |
+|---|---|---|---|---|---|
+| | | | | | |

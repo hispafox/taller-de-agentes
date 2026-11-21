@@ -9,9 +9,11 @@ Si te piden explicar o mirar, no cambies nada.
 Antes de escribir:
 1. Explora lo que el cambio toca: el código, sus pruebas y lo que depende de él.
 2. Si falta una decisión que no está escrita, hazme una pregunta y espera.
-3. Dime en una línea si es pequeño o grande, y por qué. El número de ficheros no cuenta.
-   Si toca contratos públicos, datos, permisos, pagos o migraciones, nunca es pequeño.
-4. Si no es pequeño y no tienes plan ni documento, abre el documento,
+3. Lee «Señales duras» en .github/copilot-instructions.md.
+   Dime en una línea si es pequeño o grande, y por qué. El número de ficheros no cuenta.
+   Si toca una señal dura, nunca es pequeño. Di cuál.
+4. Si toca una señal dura y no tienes un plan aprobado, para: va por la ruta completa.
+   Si no es pequeño por otro motivo y no tienes plan ni documento, abre el documento,
    dime cuántas tareas lleva y espera.
 
 Implementa tarea a tarea, en una rama que no sea la principal:
