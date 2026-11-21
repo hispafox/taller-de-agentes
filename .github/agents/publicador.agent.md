@@ -1,7 +1,7 @@
 ---
 name: Publicador
 description: Prepara y publica como issues las historias de una funcionalidad y saca su plan de pruebas manuales. Úsalo cuando la especificación y el plan estén aprobados.
-tools: ['read', 'search', 'edit', 'github/search_issues', 'github/issue_write']
+tools: ['read', 'search', 'edit', 'github/search_issues', 'github/issue_write', 'github/create_pull_request']
 skills: ['publicar-historias']
 disable-model-invocation: true
 ---

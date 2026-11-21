@@ -54,6 +54,8 @@ Un cambio que toque alguna de estas cosas no va por la ruta ligera, aunque sea c
 Las rutas están en docs/rutas.md. Esta lista la cambia el equipo en un pull request,
 nunca un caso suelto.
 
+En los mensajes de commit no uses close, fix ni resolve delante del número de un issue.
+
 ## Documentos que salen del repositorio
 
 Todo documento que salga del repositorio lleva su bloque de control: proyecto, versión,
